@@ -1,0 +1,667 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header .logo {
+    font-size: 1.5rem;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+    max-width: 90%;
+}
+
+.hero p {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1rem;
+    max-width: 90%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.featured-collections {
+    margin-top: 2rem;
+}
+
+.collection-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.collection-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+}
+
+.collection-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.video-item video {
+    width: 100%;
+    border-radius: 5px;
+    height: 400px;
+}
+
+.contact, .about-me {
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+.gallery-info {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .gallery-info p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+
+form label {
+    margin: 0.5rem 0;
+}
+
+form input, form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.rotating-images {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+}
+.rotating-images img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.rotating-images img.active {
+    opacity: 1;
+}
+
+.container {
+    text-align: center;
+}
+
+.image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.slider-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.slider-button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    display: block;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* for photogallery */
+/* Modal CSS */
+.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black background with transparency */
+  }
+  
+  .modal-content1 {
+    margin: auto;
+    display: block;
+    max-width: 80%; /* Responsive max width */
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-content1 img {
+    width: 100%; /* Make the image responsive */
+  }
+  
+  .close1 {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close1:hover,
+  .close1:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #caption1 {
+    margin: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+
+
+#caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1, .hero p {
+        font-size: 1.5rem;
+        max-width: 100%;
+    }
+
+    .btn {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .collection-item {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero h1, .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+}
+/* Responsive Logo */
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 40px; /* Adjust logo image size for smaller screens */
+    }
+
+    .logo span {
+        font-size: 1.25rem; /* Adjust font size for smaller screens */
+    }
+    header .logo {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero h1, .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-height: 30px; /* Further adjust size for very small screens */
+    }
+
+    .logo span {
+        font-size: 1rem; /* Further adjust font size */
+    }
+    header .logo {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero h1, .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+}
+/* Logo with Shadow and Gradient */
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+.social-links {
+    display: flex;
+    gap: 10px; /* Adjust spacing between icons */
+}
+
+
+
+.logo span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient color */
+    opacity: 0.7;
+}
+
+/*for mobile devices*/
+@media (min-width: 319px) and (max-width: 481px){
+     .profile{
+        width: 250px;
+    }
+    /*
+    .about-me{
+        width: 195px;
+    }
+    .about-me p{
+        font-size: 10px;
+        width: 200px;
+    } */
+    .menu {
+        display: none; /* Hide menu by default */
+      }
+      
+      .menu.show {
+        display: block; /* Show menu when 'show' class is added */
+      }
+      
+    
+    
+    }
+    /*for smaller tablets and ipad*/
+    
+    @media (min-width: 481px) and (max-width: 700px){
+        .menu {
+            display: none; /* Hide menu by default */
+          }
+          
+          .menu.show {
+            display: block; /* Show menu when 'show' class is added */
+          }
+          
+    
+    
+    }
+    
+    /*for tablets and ipad*/
+    @media (min-width: 701px) and (max-width: 1200px){
+        .rotating-images {
+            position: relative;
+            width: 100%;
+            height: 800px; /* Adjust height as needed */
+            overflow: hidden;
+        }
+        .rotating-images img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        header .logo {
+            font-size: 1.2rem;
+        }
+    
+        nav {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #333;
+            width: 100%;
+            padding: 1rem;
+            z-index: 1000;
+        }
+    
+        nav.active {
+            display: block;
+        }
+    
+        nav ul {
+            display: block;
+            text-align: center;
+        }
+    
+        nav ul li {
+            display: block;
+            margin: 0.5rem 0;
+        }
+    
+        .menu-toggle {
+            display: flex;
+        }
+    
+        .hero h1, .hero p {
+            font-size: 1rem;
+        }
+    
+        .btn {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.75rem;
+        }
+    }
+    /*for laptops*/
+    @media (min-width: 1201px) and (max-width: 1600px){
+      /* Basic styles for the rotating images */
+        .rotating-images {
+            position: relative;
+            width: 100%;
+            height: 1300px; /* Adjust height as needed */
+            overflow: hidden;
+        }
+        .rotating-images img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .rotating-images img.active {
+            opacity: 1;
+        }
+    }
+    /*for destop*/
+    @media (min-width: 1601px){
+      
+    }
